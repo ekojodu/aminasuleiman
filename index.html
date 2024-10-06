@@ -1,105 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!-- CSP SECURITY -->
-		<meta
-			http-equiv="Content-Security-Policy"
-			content="
-  default-src 'self'; 
-  script-src 'self' 'unsafe-inline' 'sha256-<hash-of-swiper-inline-scripts>' https://cdn.jsdelivr.net https://kit.fontawesome.com; 
-  style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://kit.fontawesome.com https://unpkg.com; 
-  font-src 'self' https://kit.fontawesome.com https://cdn.jsdelivr.net https://unpkg.com; 
-  img-src 'self' data:; 
-  object-src 'none'; 
-  base-uri 'self'; 
-  form-action 'self'; 
-  frame-ancestors 'none'; 
-  upgrade-insecure-requests; 
-  report-uri /csp-report-endpoint;"
+    <!-- CSP SECURITY -->
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="
+        default-src 'self';  /* Only allow content from the same origin */
+        script-src 'self' https://smtpjs.com https://cdn.jsdelivr.net https://kit.fontawesome.com;  /* Allow scripts from self and specified domains */
+        style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com;  /* Allow styles from self and specified domains */
+        img-src 'self' data: https://www.ekojodu.github.io;  /* Allow images from self, data URIs, and specified domain */
+        font-src 'self' https://cdnjs.cloudflare.com https://unpkg.com https://fonts.googleapis.com https://fonts.gstatic.com;  /* Allow fonts from self and specified domains */
+        object-src 'none';  /* Disallow all plugins */
+        base-uri 'self';  /* Prevent changing the base URL */
+        form-action 'self';  /* Allow forms to be submitted only to the same origin */
+        frame-ancestors 'none';  /* Disallow embedding of your site in frames */
+        upgrade-insecure-requests;  /* Upgrade all HTTP requests to HTTPS */
+        report-uri /csp-report-endpoint;  /* Specify URL to report CSP violations */
+    "
+    />
 
-		/>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- Combined Meta Tags for Nigerian States and Major Countries -->
-		<meta
-			name="description"
-			content="Creative content writer specializing in fashion and food industries, providing services in Lagos, Kano, Abuja, Rivers, Enugu, as well as the United States, UK, Canada, France, Germany, and other major countries."
-		/>
-		<meta
-			name="keywords"
-			content="Nigeria, Lagos, Kano, Abuja, Rivers, Enugu, Oyo, Kaduna, Delta, Anambra, Ondo, Benue, Borno, Sokoto, Zamfara, Kwara, Bauchi, Cross River, Edo, Ebonyi, Ekiti, Adamawa, Bayelsa, Gombe, Imo, Jigawa, Kebbi, Kogi, Nasarawa, Niger, Ogun, Osun, Plateau, Taraba, Yobe, Akwa Ibom, Abia, United States, UK, Canada, France, Germany, Australia, South Africa, India, China, Japan, Brazil, Mexico, Russia, Italy, Spain, Netherlands, Saudi Arabia, UAE, Argentina, Egypt, Turkey"
-		/>
+    <!-- Charset -->
+    <meta charset="UTF-8" />
 
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta
-			name="twitter:title"
-			content="Creative Writer in Fashion and Food Industries"
-		/>
-		<meta
-			name="twitter:description"
-			content="Offering content writing services for fashion and food industries across major countries."
-		/>
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Meta Author -->
-		<meta name="author" content="Aminat Suleiman" />
+    <!-- Meta Tags for SEO and Social Media -->
+    <meta name="description" content="Creative content writer specializing in fashion and food industries, providing services in Lagos, Kano, Abuja, Rivers, Enugu, as well as the United States, UK, Canada, France, Germany, and other major countries." />
+    <meta name="keywords" content="Nigeria, Lagos, Kano, Abuja, Rivers, Enugu, Oyo, Kaduna, Delta, Anambra, Ondo, Benue, Borno, Sokoto, Zamfara, Kwara, Bauchi, Cross River, Edo, Ebonyi, Ekiti, Adamawa, Bayelsa, Gombe, Imo, Jigawa, Kebbi, Kogi, Nasarawa, Niger, Ogun, Osun, Plateau, Taraba, Yobe, Akwa Ibom, Abia, United States, UK, Canada, France, Germany, Australia, South Africa, India, China, Japan, Brazil, Mexico, Russia, Italy, Spain, Netherlands, Saudi Arabia, UAE, Argentina, Egypt, Turkey" />
 
-		<!-- OG Title -->
-		<meta
-			property="og:title"
-			content="Creative Writer | Specializing in Fashion and Food Content | Daniel Blaise"
-		/>
+    <!-- Social Media Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Creative Writer in Fashion and Food Industries" />
+    <meta name="twitter:description" content="Offering content writing services for fashion and food industries across major countries." />
+    <meta name="author" content="Aminat Suleiman" />
+    <meta property="og:title" content="Creative Writer | Specializing in Fashion and Food Content | Daniel Blaise" />
+    <meta property="og:description" content="A Nigerian-based creative content writer with a passion for the fashion and food industries. Skilled in producing high-quality content to captivate your audience and enhance brand storytelling." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ekojodu.github.io/aminatsuleiman" />
+    <meta property="og:image" content="https://www.ekojodu.github.io/aminatsuleiman/path-to-image.jpg" />
+    <meta property="og:locale" content="en_NG" />
+    <meta property="og:site_name" content="Aminat Suleiman | Creative Writer" />
 
-		<!-- OG Description -->
-		<meta
-			property="og:description"
-			content="A Nigerian-based creative content writer with a passion for the fashion and food industries. Skilled in producing high-quality content to captivate your audience and enhance brand storytelling."
-		/>
+    <!-- External CSS (Swiper, FontAwesome, Boxicons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-		<!-- OG Type -->
-		<meta property="og:type" content="website" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css" />
 
-		<!-- OG URL -->
-		<meta
-			property="og:url"
-			content="https://www.ekojodu.github.io/aminatsuleiman"
-		/>
-
-		<!-- OG Image (use a relevant image) -->
-		<meta
-			property="og:image"
-			content="https://www.ekojodu.github.io/aminatsuleiman/path-to-image.jpg"
-		/>
-
-		<!-- OG Locale -->
-		<meta property="og:locale" content="en_NG" />
-
-		<!-- OG Site Name -->
-		<meta property="og:site_name" content="Aminat Suleiman | Creative Writer" />
-		<title>Aminat Suleiman</title>
-
-		<!-- swiper css  -->
-
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-		/>
-
-		<!-- custom css -->
-
-		<link rel="stylesheet" href="index.css" />
-		<!-- fontawesome icon -->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-		/>
-
-		<!-- box icons -->
-
-		<link
-			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-			rel="stylesheet"
-		/>
-	</head>
+    <!-- Page Title -->
+    <title>Aminat Suleiman</title>
+</head>
 
 	<body>
 		<!-- header section design  -->
